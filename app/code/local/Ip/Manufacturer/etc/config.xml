@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config>
+
+    <modules>
+        <Ip_Manufacturer>
+            <version>0.1.0</version>
+        </Ip_Manufacturer>
+    </modules>
+
+    <frontend>
+        <routers>
+            <manufacturer>
+                <use>standard</use>
+                <args>
+                    <module>Ip_Manufacturer</module>
+                    <frontName>manufacturer</frontName>
+                </args>
+            </manufacturer>
+        </routers>
+        <layout>
+            <updates>
+                <manufacturer>
+                    <file>manufacturer.xml</file>
+                </manufacturer>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <!--<helpers>
+            <manufacturer>
+                <class>Ip_Manufacturer_Helper</class>
+            </manufacturer>
+        </helpers>-->
+        <blocks>
+            <manufacturer>
+                <class>Ip_Manufacturer_Block</class>
+            </manufacturer>
+        </blocks>
+        <!--<models>
+            <manufacturer>
+                <class>Ip_Manufacturer_Model</class>
+            </manufacturer>
+        </models>-->
+    </global>
+
+</config>

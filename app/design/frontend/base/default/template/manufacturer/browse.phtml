@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var $this Ip_Manufacturer_Block_Browse
+ */
+?>
+<div class="block block-layered-nav">
+    <div class="block-title">
+        <strong><span>Manufacturers</span></strong>
+    </div>
+    <div class="block-content">
+        <dl id="browse-manufacturers">
+            <dd class="last odd">
+                <form id="manufacturer_search" action="<?php echo Mage::getUrl('manufacturer');?>" method="get">
+                    <select id="manufacturer_id" name="manufacturer_id">
+                        <option value="-1">--Select a Manufacturer--</option>
+                        <?php foreach($this->getManufacturers() as $manufacturer):?>
+                            <option value="<?php echo $manufacturer->getOptionId();?>"><?php echo $manufacturer->getValue();?></option>
+                        <?php endforeach;?>
+                    </select>
+                </form>
+            </dd>
+        </dl>
+    </div>
+</div>
+<script>
+    //<![CDATA[
+    var manufacturerForm = new VarienForm('manufacturer_search', true);
+    Event.observe($('manufacturer_search'),'change', function(){
+        manufacturerForm.submit();
+    });
+    //]]>
+</script>

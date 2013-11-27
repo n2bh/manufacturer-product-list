@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <display_manufacturers>
+        <reference name="left">
+            <block type="manufacturer/browse" name="manufacturer.browse" before="-" template="manufacturer/browse.phtml"/>
+        </reference>
+    </display_manufacturers>
+
+    <!--Display on home page-->
+    <cms_index_index>
+        <update handle="display_manufacturers"/>
+    </cms_index_index>
+
+    <!--Display on cms pages-->
+    <cms_page>
+        <!--<update handle="display_manufacturers"/>-->
+    </cms_page>
+
+    <!--Display on product list-->
+    <catalog_category_default>
+        <!--<update handle="display_manufacturers"/>-->
+    </catalog_category_default>
+
+    <!--Display on anchored product list-->
+    <catalog_category_layered>
+        <!--<update handle="display_manufacturers"/>-->
+    </catalog_category_layered>
+
+    <!--Display on search results-->
+    <catalogsearch_result_index>
+        <!--<update handle="display_manufacturers"/>-->
+    </catalogsearch_result_index>
+
+    <!--Display on product view pages-->
+    <catalog_product_view>
+        <!--<update handle="display_manufacturers"/>-->
+    </catalog_product_view>
+
+    <manufacturer_index_index>
+        <reference name="left">
+            <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml"/>
+        </reference>
+        <reference name="content">
+            <block type="manufacturer/catalog_product_list" name="product_list" template="catalog/product/list.phtml">
+                <block type="manufacturer/catalog_product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                    <block type="page/html_pager" name="product_list_toolbar_pager"/>
+                </block>
+                <action method="setColumnCount"><columns>4</columns></action>
+            </block>
+        </reference>
+    </manufacturer_index_index>
+
+</layout>
